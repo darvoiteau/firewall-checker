@@ -19,7 +19,7 @@ cd firewall-checker
 cargo build --release
 cd target/release
 ./firewallchecker --help
-
+```
 **** or ****
 
 Download the release here to get the binary executable: <a href="https://github.com/darvoiteau/firewall-checker/releases">firewall-checker releases</a>
