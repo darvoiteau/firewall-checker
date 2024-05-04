@@ -32,11 +32,11 @@ chmod +x firewallchecker-xxxxx
 Options:
   -p, --port        port(s) to check. Ex: 80-443 -> ports 80 from 443 will be
                     checked. Ex: 80,443 -> ports 80 and 443 only will be
-                    checked. <br>
+                    checked. <br><br>
   -d, --destination destination ip.  Ex:192.168.1.0/24 -> network destination.
                     Ex: 192.168.1.1,192.168.1.2 -> multiple targets.<br>
-  -o, --output      filename to export result in CSV.<br>
-  -t, --time        time between each paket.<br>
+  -o, --output      filename to export result in CSV.<br><br>
+  -t, --time        time between each paket.<br><br>
   --help            display usage information<br>
 
 ### --port
