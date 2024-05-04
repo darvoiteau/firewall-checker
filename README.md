@@ -32,23 +32,23 @@ chmod +x firewallchecker-xxxxx
 Options:
   -p, --port        port(s) to check. Ex: 80-443 -> ports 80 from 443 will be
                     checked. Ex: 80,443 -> ports 80 and 443 only will be
-                    checked.
+                    checked. <br>
   -d, --destination destination ip.  Ex:192.168.1.0/24 -> network destination.
-                    Ex: 192.168.1.1,192.168.1.2 -> multiple targets.
-  -o, --output      filename to export result in CSV.
-  -t, --time        time between each paket.
-  --help            display usage information
+                    Ex: 192.168.1.1,192.168.1.2 -> multiple targets.<br>
+  -o, --output      filename to export result in CSV.<br>
+  -t, --time        time between each paket.<br>
+  --help            display usage information<br>
 
 ### --port
-Set single destination port: -p 80 or --port 80
-Set multiple destination port: -p 80,443,... or --port 80,443,... -> port 80 and 443 will be checked
-Set range destination port: -p 80-443 or -- port 80-443 -> port from 80 to 443 will be checked
+Set single destination port: -p 80 or --port 80<br>
+Set multiple destination port: -p 80,443,... or --port 80,443,... -> port 80 and 443 will be checked<br>
+Set range destination port: -p 80-443 or -- port 80-443 -> port from 80 to 443 will be checked<br>
 
 ### --destination
-Set single destination ip: -d 192.168.1.1 or --destination 192.168.1.1
-Set multiple destination ip: -d 192.168.1.1,192.168.1.2 or --destination 192.168.1.1,192.168.1.2
-Set a destination network ip: -d 192.168.1.0/24 or --destination 192.168.1.0/24
+Set single destination ip: -d 192.168.1.1 or --destination 192.168.1.1<br>
+Set multiple destination ip: -d 192.168.1.1,192.168.1.2 or --destination 192.168.1.1,192.168.1.2<br>
+Set a destination network ip: -d 192.168.1.0/24 or --destination 192.168.1.0/24<br>
 
 ### --time
-This option set the duration (in ms) between each packet sent to check tcp port. By default it is 1000 ms so 1 sec.
-Set the duration between each packet: -t 500 or --time 500 -> each packet will be sent each 500 ms.
+This option set the duration (in ms) between each packet sent to check tcp port. By default it is 1000 ms so 1 sec.<br>
+Set the duration between each packet: -t 500 or --time 500 -> each packet will be sent each 500 ms.<br>
