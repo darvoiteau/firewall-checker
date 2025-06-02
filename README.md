@@ -52,3 +52,6 @@ Set a destination network ip: -d 192.168.1.0/24 or --destination 192.168.1.0/24<
 ### --time
 This option set the duration (in ms) between each packet sent to check tcp port. By default it is 1000 ms so 1 sec.<br>
 Set the duration between each packet: -t 500 or --time 500 -> each packet will be sent each 500 ms.<br>
+
+### --worker
+This option set the number of workers. The number of workers defines the number of processes that work simultaneously during the firewall-checker running. By default the value is 100.
