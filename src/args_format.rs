@@ -1,4 +1,5 @@
 use ipnet::IpNet;
+use regex::Regex;
 
 pub fn port_format(port: &String) -> Vec<u16>{
     let kind: u8;
@@ -100,7 +101,13 @@ pub fn dst_format(dst: &String) -> Vec<String>{
                 let ip_string = ip.to_string();
                 user_dst.push(ip_string);
             }
-        } 
+        }
+        else if let IpNet::V6(ipv6_net) = ip_network {
+            for ip in ipv6_net.hosts(){
+                let ip_string = ip.to_string();
+                user_dst.push(ip_string);
+            }
+        }
 
 
 
@@ -111,4 +118,13 @@ pub fn dst_format(dst: &String) -> Vec<String>{
 
     }
   user_dst
+}
+
+//Check if the filename given by the user not contain unwanted char
+pub fn filename_check(foutput: &str){
+    let unwaned_special_chars_re = Regex::new(r#"[=:*?"',;!{}\[\]()'<>|]+"#).unwrap();
+    if unwaned_special_chars_re.is_match(foutput) {
+        eprintln!("Error ! The given filename '{}' contain invalid special character", foutput);
+        std::process::exit(1);
+    }
 }

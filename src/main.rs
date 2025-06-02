@@ -27,6 +27,9 @@ struct Args {
     ///time between each paket.
     time: u64,
 
+    #[argh(option, short = 'w', default = "100")]
+    ///number of concurrent workers. By default 100
+    worker: usize,
 
 }
 
@@ -34,7 +37,9 @@ fn main() {
     //Catch params given by the user
     let options: Args = argh::from_env();
     let scan_port = port_init(&options);
-    port_check::port_analysis(scan_port.destination_ip, scan_port.port_number, options.output, options.time);
+    //Verify if the filename given by the user not content any unwanted char
+    args_format::filename_check(&options.output.as_str());
+    port_check::port_analysis(scan_port.destination_ip, scan_port.port_number, options.output, options.time, options.worker);
 
 
 }
